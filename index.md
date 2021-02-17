@@ -48,7 +48,7 @@ Hier komen alle resultaten van de summatieve opdrachten nog een keer uitgeschrev
 
   [Link](url) and !
   ```
-![Resultaat opdracht 2a](https://github.com/StanHaakman/MongoDB-to-RationalDB/blob/gh-pages/images/resultaat%20opdracht%202a.png)
+![Resultaat opdracht 2a](//github.com/StanHaakman/MongoDB-to-RationalDB/blob/gh-pages/images/resultaat%20opdracht%202a.png)
 ### Gebruikte technieken
 Hier komen alle tools, libraries en andere hulpmiddelen te staan.
 
