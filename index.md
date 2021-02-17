@@ -32,22 +32,40 @@ Hier komen alle resultaten van de summatieve opdrachten nog een keer uitgeschrev
   Dit is het resultaat van opdracht 2a:
   ![Resultaat opdracht 2a](https://github.com/StanHaakman/MongoDB-to-RationalDB/blob/gh-pages/images/resultaat_opdracht_2a.png)
 
-  ```markdown
-  Syntax highlighted code block
+  Bij het eerste onderdeel moesten we de eersta name en price ophalen.
+  ```
+    def first_name_price(self):
+        # Geef de naam en de prijs van het eerste product in de lijst
+        return self.mydb.products.find_one({}, {"_id": 0, "name": 1, "price.selling_price": 1})
+  ```
 
-  # Header 1
-  ## Header 2
-  ### Header 3
+  Bij het tweede onderdeel moesten we het eerste product met de letter "R" terug geven. Wij hebben ervoor gekozen om heb flexibel te maken. Je kunt bij onze functie zelf aangeven welke letter je het eerste product van wil vinden.
+  ```
+    def name_start_letter(self, letter):
+        # Geef het eerste product terug, waar de naam begint met het gewenste letter
+        for i in self.mydb.products.find({}, {"_id": 0, "name": 1}):
+            var = i['name']
+            if letter == var[0]:
+                return var
+   ```
 
-  - Bulleted
-  - List
+   Bij het derde onderdeel moesten we de gemiddelde prijs van de producten bepalen. Wij hebben ervoor gekozen om producten die als prijs 0 hebben over te slaan, omdat we die rekenen als invalid products.
+   ```
+    def average_price(self):
+        totalprice = 0
+        totalitems = 0
 
-  1. Numbered
-  2. List
+        for i in self.mydb.products.find({}, {"_id": 0, "price.selling_price": 1}):
+            if i != {}:
+                var = i["price"]
+                newvar = var["selling_price"]
 
-  **Bold** and _Italic_ and `Code` text
+                # Pijzen die 0 zijn ook meenemen of overslaan.
+                if newvar != 0:
+                    totalprice += newvar
+                    totalitems += 1
 
-  [Link](url) and ![ImageAlt](src)
+        return totalprice / totalitems 
   ```
 
 ### Gebruikte technieken
