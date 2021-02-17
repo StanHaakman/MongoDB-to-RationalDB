@@ -2,12 +2,12 @@ import pymongo
 import psycopg2
 
 from classes.tests._test_importMongodb import *
-from classes._data_recieve import getdata
+from classes._data_recieve import Getdata
 
 myclient = MongoClient("mongodb://localhost:27017/")
 mydb = myclient["huwebshop"]
 
-databaseData = getdata(myclient=myclient, mydb=mydb)
+databaseData = Getdata(myclient=myclient, mydb=mydb)
 
 print('first name: ', databaseData.first_name_price())
 

@@ -1,7 +1,6 @@
-from pymongo import MongoClient
 
 
-class getdata(object):
+class Getdata:
     """
     Deze class is gemaakt voor het ophalen van data
     geef een uitleg van elke functie in de vorm van een comment
