@@ -1,0 +1,27 @@
+Bruikbare dingen uit MongoDB
+
+Products:
+- id
+- brand
+- category
+- fast-mover?
+- gender
+- herhaalaankopen?
+- price
+- iets uit properties?
+- sub(_sub(_sub?)) category
+
+Sessions:
+(- user_agent.os.family
+- user_agent.browser.family?
+- user_agent.device.family)
+- user_agent.flags
+- totale sessie tijd (session_end - session_start)
+- has_sale
+- segment
+-
+
+Visitors:
+- previously_recommended
+- latest activity
+- 
