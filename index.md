@@ -30,7 +30,7 @@ Hier komen alle resultaten van de summatieve opdrachten nog een keer uitgeschrev
 
 #### Opdracht 2a
   Dit is het resultaat van opdracht 2a:
-  ![Resultaat opdracht 2a](https://github.com/StanHaakman/MongoDB-to-RationalDB/blob/gh-pages/images/resultaat_opdracht_2a.png)
+  ![Resultaat opdracht 2a](https://stanhaakman.github.io/MongoDB-to-RationalDB/images/resultaat_opdracht_2a.png)
 
   Bij het eerste onderdeel moesten we de eersta name en price ophalen.
   ```
