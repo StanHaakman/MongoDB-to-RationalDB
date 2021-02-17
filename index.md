@@ -32,7 +32,7 @@ Hier komen alle resultaten van de summatieve opdrachten nog een keer uitgeschrev
   Dit is het resultaat van opdracht 2a:
   ![Resultaat opdracht 2a](https://stanhaakman.github.io/MongoDB-to-RationalDB/images/resultaat_opdracht_2a.png)
 
-  Bij het eerste onderdeel moesten we de eersta name en price ophalen.
+  Bij het eerste onderdeel moesten we de eerste name en price ophalen.
   ```
     def first_name_price(self):
         # Geef de naam en de prijs van het eerste product in de lijst
