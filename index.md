@@ -1,11 +1,11 @@
 ## Welkom!
 
-Op deze pagina gaan wij een aantal van de belangrijkste onderdelen van ons project tonen. Hier komen bijvoorbeeld de resultaten van de summatieve opdrachten op te staan en ook een korte uitleg op welke manier we op dat resultaat gekomen zijn. Ook komt er een korte introductie en samenvatting van wat er precies in deze opdracht gemaaakt moet worden.
+Op deze pagina gaan wij enkele van de belangrijkste onderdelen van ons project tonen. Hier komen bijvoorbeeld de resultaten van de summatieve opdrachten op te staan en ook een korte uitleg op welke manier we op dat resultaat gekomen zijn. Ook komt er een korte introductie en samenvatting van wat er precies in deze opdracht gemaaakt moet worden.
 
 ### Inhoud
 <ul>
   <li>Samenvatting;</li>
-  <li>Resultaten tussenopdrachten;</li>
+  <li>Resultaten tussen opdrachten;</li>
     <ul>
       <li>Opdracht 2a;</li>
       <li>Opdracht 2b;</li>
@@ -20,15 +20,15 @@ Op deze pagina gaan wij een aantal van de belangrijkste onderdelen van ons proje
 
 ### Samenvatting
 
-Er is een 'probleem' die opgelost moet worden. Er is namelijk een complete database beschikbaar waar normaal de website op draaid. Deze data is nu een eenvoudig te importeren JSON bestand. Het eerste onderdeel van de opdracht is het omzetten van de huidige database, dat is nu een document store, naar een relationele database. Hier kan dan later een recommendation engine voor gemaakt worden.
+Er is een 'probleem' die opgelost moet worden. Er is namelijk een complete database beschikbaar waar normaal de website op draait. Deze data is nu een eenvoudig te importeren JSON-bestand. Het eerste onderdeel van de opdracht is het omzetten van de huidige database dat is nu een document store, naar een relationele database. Hier kan dan later een recommendation engine voor gemaakt worden.
 
 Het doel is dus om de huidige database te gaan begrijpen en daarna een nieuwe relationele database te ontwerpen waarin de juiste data kan worden opgeslagen. Ook moet er in een procedurele programmeertaal een programma geschreven worden die de gegevens overzet van de document store naar de relationele database. Daarbij moet een document toegevoegd worden die de code en de database ondersteund.
 
-### Resultaten tussenopdrachten
+### Resultaten tussen opdrachten
 
 Hier komen alle resultaten van de summatieve opdrachten nog een keer uitgeschreven terug en ook met een kort stukje van de code met daarbij het bijbehorende resultaat.
 
-#### Opdraht 2a
+#### Opdracht 2a
   Dit is het resultaat van opdracht 2a:
 
   ```markdown
@@ -74,7 +74,7 @@ Voor het verwerken van de huidige document store gaan we gebruik maken van Mongo
 </ul>
 
 #### Python libraries
-We maken tijdens dit project gebruik van heel wat libraries en die komen hieronder allemaal te staan
+We maken tijdens dit project gebruik van heel wat libraries en die komen hieronder allemaal te staan.
 
 <ul>
   <li>Pymongo</li>
