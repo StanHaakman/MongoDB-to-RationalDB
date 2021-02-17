@@ -46,7 +46,7 @@ Hier komen alle resultaten van de summatieve opdrachten nog een keer uitgeschrev
 
   **Bold** and _Italic_ and `Code` text
 
-  [Link](url) and ![Image](src)
+  [Link](url) and ![Image]('/images/test.jpg')
   ```
 
 ### Gebruikte technieken
