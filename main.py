@@ -9,7 +9,7 @@ databaseData = getdata(myclient=myclient, mydb=mydb)
 
 print('first name: ', databaseData.first_name_price())
 
-print(databaseData.name_start_letter(letter='R'))
+print('first product name of desired letter: ', databaseData.name_start_letter(letter='R'))
 
-print(databaseData.average_price())
+print('average price of all products: ', databaseData.average_price())
 

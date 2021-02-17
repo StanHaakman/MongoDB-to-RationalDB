@@ -13,10 +13,10 @@ class getdata(object):
 
     def first_name_price(self):
         # Geef de naam en de prijs van het eerste product in de lijst
-        return self.mydb.products().find_one({}, {"_id": 0, "name": 1, "price.selling_price": 1})
+        return self.mydb.products.find_one({}, {"_id": 0, "name": 1, "price.selling_price": 1})['name']
 
     def name_start_letter(self, letter):
-        # Geef het eerste product terug, waar de naam begint met R
+        # Geef het eerste product terug, waar de naam begint met het gewenste letter
         for i in self.mydb.products.find({}, {"_id": 0, "name": 1}):
             var = i['name']
             if letter == var[0]:
