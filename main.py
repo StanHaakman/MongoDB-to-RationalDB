@@ -1,4 +1,6 @@
 import pymongo
+import psycopg2
+
 from classes.tests._test_importMongodb import *
 from classes._data_recieve import getdata
 
