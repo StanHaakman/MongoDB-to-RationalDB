@@ -7,4 +7,8 @@ mydb = myclient["huwebshop"]
 
 databaseData = getdata(myclient=myclient, mydb=mydb)
 
+print(databaseData.first_name_price())
+
 print(databaseData.name_start_letter(letter='R'))
+
+print(databaseData.average_price())
