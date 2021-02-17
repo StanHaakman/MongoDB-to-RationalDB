@@ -32,8 +32,8 @@ class getdata(object):
                 newvar = var["selling_price"]
 
                 # Pijzen die 0 zijn ook meenemen of overslaan.
-                # if newvar != 0:
-                totalprice += newvar
-                totalitems += 1
+                if newvar != 0:
+                    totalprice += newvar
+                    totalitems += 1
 
         return totalprice / totalitems
