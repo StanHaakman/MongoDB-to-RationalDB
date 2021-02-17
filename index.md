@@ -30,6 +30,7 @@ Hier komen alle resultaten van de summatieve opdrachten nog een keer uitgeschrev
 
 #### Opdracht 2a
   Dit is het resultaat van opdracht 2a:
+  ![Resultaat opdracht 2a](https://github.com/StanHaakman/MongoDB-to-RationalDB/blob/gh-pages/images/resultaat_opdracht_2a.png)
 
   ```markdown
   Syntax highlighted code block
@@ -46,9 +47,9 @@ Hier komen alle resultaten van de summatieve opdrachten nog een keer uitgeschrev
 
   **Bold** and _Italic_ and `Code` text
 
-  [Link](url) and !
+  [Link](url) and ![ImageAlt](src)
   ```
-![Resultaat opdracht 2a](https://github.com/StanHaakman/MongoDB-to-RationalDB/blob/gh-pages/images/resultaat_opdracht_2a.png)
+
 ### Gebruikte technieken
 Hier komen alle tools, libraries en andere hulpmiddelen te staan.
 
