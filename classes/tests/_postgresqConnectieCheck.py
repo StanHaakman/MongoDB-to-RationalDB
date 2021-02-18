@@ -17,5 +17,3 @@ def get_data(con, sqlstring):
 
     return record
 
-
-print(get_data(connect_to_db(), 'SELECT version()'))
