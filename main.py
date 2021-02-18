@@ -1,7 +1,7 @@
 import pymongo
 import psycopg2
 
-from classes.tests._test_importMongodb import *
+from classes.tests._MongodbConnectieCheck import *
 from classes._data_recieve import getdata
 
 myclient = MongoClient("mongodb://localhost:27017/")
