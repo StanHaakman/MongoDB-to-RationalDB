@@ -1,8 +1,9 @@
 import psycopg2
+import dbsecret
 
 
 def connect_to_db():
-    con = psycopg2.connect(host='localhost', database='huwebshop', user='postgres', password='postgres')
+    con = psycopg2.connect(host='localhost', database=dbsecret.database, user=dbsecret.user, password=dbsecret.password)
 
     return con
 
