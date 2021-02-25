@@ -5,6 +5,7 @@ Products:
 - name
 - brand
 - category
+- deeplink url
 - fast-mover?
 - gender
 - herhaalaankopen?
