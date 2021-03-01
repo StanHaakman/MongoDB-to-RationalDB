@@ -2,14 +2,19 @@ Bruikbare dingen uit MongoDB
 
 Products:
 - id
+- name
 - brand
 - category
+- deeplink url
 - fast-mover?
 - gender
 - herhaalaankopen?
 - price
+// Peter: de properties in het json bestand is in mijn mening ongelovelijk inefficient met herhalende tags die null blijven houde
 - iets uit properties?
 - sub(_sub(_sub?)) category
+- stocklevel?
+
 
 Sessions:
 (- user_agent.os.family
@@ -22,6 +27,7 @@ Sessions:
 -
 
 Visitors:
+- buids
 - previously_recommended
 - latest activity
 - 
