@@ -1,7 +1,6 @@
-from pymongo import MongoClient
 
 
-class getdata(object):
+class Getdata:
     """
     Deze class is gemaakt voor het ophalen van data
     geef een uitleg van elke functie in de vorm van een comment
@@ -13,7 +12,7 @@ class getdata(object):
 
     def first_name_price(self):
         # Geef de naam en de prijs van het eerste product in de lijst
-        return self.mydb.products.find_one({}, {"_id": 0, "name": 1, "price.selling_price": 1})['name']
+        return self.mydb.products.find_one({}, {"_id": 0, "name": 1, "price.selling_price": 1})
 
     def name_start_letter(self, letter):
         # Geef het eerste product terug, waar de naam begint met het gewenste letter
