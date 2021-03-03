@@ -18,7 +18,7 @@ DROP TABLE IF EXISTS Products ;
 
 create type genders as enum ('Male', 'Female', 'Unspecified');
 CREATE TABLE IF NOT EXISTS Products (
-  idProducts INT NOT NULL,
+  idProducts SERIAL NOT NULL,
   name VARCHAR(255) NULL,
   brand VARCHAR(255) NULL,
   category VARCHAR(255) NULL,
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS Products (
 DROP TABLE IF EXISTS Visitors ;
 
 CREATE TABLE IF NOT EXISTS Visitors (
-  idVisitors INT NOT NULL,
+  idVisitors SERIAL NOT NULL,
   previously_recommended VARCHAR(255) NULL,
   latest_activity timestamp NULL,
   PRIMARY KEY (idVisitors))
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS Visitors (
 DROP TABLE IF EXISTS Buids ;
 
 CREATE TABLE IF NOT EXISTS Buids (
-  buids INT NOT NULL,
+  buids SERIAL NOT NULL,
   Visitors_idVisitors INT NOT NULL,
   Device VARCHAR(45) NULL,
   PRIMARY KEY (buids),
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS Buids (
 DROP TABLE IF EXISTS Sessions ;
 
 CREATE TABLE IF NOT EXISTS Sessions (
-  idSessions INT NOT NULL,
+  idSessions SERIAL NOT NULL,
   Buids_buids int NOT NULL,
   device_family VARCHAR(255) NULL,
   sessietime TIME NULL,
@@ -84,8 +84,8 @@ CREATE TABLE IF NOT EXISTS Sessions (
 DROP TABLE IF EXISTS events ;
 
 CREATE TABLE IF NOT EXISTS events (
-  Products_idProducts INT NOT NULL,
-  Sessions_idSessions INT NOT NULL,
+  Products_idProducts SERIAL NOT NULL,
+  Sessions_idSessions SERIAL NOT NULL,
   Event VARCHAR(255) NULL,
   CONSTRAINT fk_events_Products1
     FOREIGN KEY (Products_idProducts)
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS events (
 DROP TABLE IF EXISTS orders ;
 
 CREATE TABLE IF NOT EXISTS orders (
-  Products_idProducts INT NOT NULL,
+  Products_idProducts SERIAL NOT NULL,
   Sessions_idSessions INT NOT NULL,
   Amount INT NOT NULL,
   CONSTRAINT fk_orders_Products1
@@ -120,8 +120,8 @@ CREATE TABLE IF NOT EXISTS orders (
 DROP TABLE IF EXISTS viewed_before ;
 
 CREATE TABLE IF NOT EXISTS viewed_before (
-  Visitors_idVisitors INT NOT NULL,
-  Products_idProducts INT NOT NULL,
+  Visitors_idVisitors SERIAL NOT NULL,
+  Products_idProducts SERIAL NOT NULL,
   Timedate timestamp NULL,
   CONSTRAINT fk_viewed_before_Products1
     FOREIGN KEY (Products_idProducts)
@@ -138,8 +138,8 @@ CREATE TABLE IF NOT EXISTS viewed_before (
 DROP TABLE IF EXISTS Category ;
 
 CREATE TABLE IF NOT EXISTS Category (
-  idCategory INT NOT NULL,
-  Products_idProducts INT NOT NULL,
+  idCategory SERIAL NOT NULL,
+  Products_idProducts SERIAL NOT NULL,
   _name VARCHAR(255) NULL,
   PRIMARY KEY (idCategory),
   CONSTRAINT fk_Category_Products1
@@ -154,8 +154,8 @@ CREATE TABLE IF NOT EXISTS Category (
 DROP TABLE IF EXISTS Subcategory ;
 
 CREATE TABLE IF NOT EXISTS Subcategory (
-  idSubcategory INT NOT NULL,
-  Category_idCategory INT NOT NULL,
+  idSubcategory SERIAL NOT NULL,
+  Category_idCategory SERIAL NOT NULL,
   name VARCHAR(255) NULL,
   leveldepth INT NULL,
   PRIMARY KEY (idSubcategory),
@@ -171,8 +171,8 @@ CREATE TABLE IF NOT EXISTS Subcategory (
 DROP TABLE IF EXISTS Similars ;
 
 CREATE TABLE IF NOT EXISTS Similars (
-  Visitors_idVisitors INT NOT NULL,
-  Products_idProducts INT NOT NULL,
+  Visitors_idVisitors SERIAL NOT NULL,
+  Products_idProducts SERIAL NOT NULL,
   CONSTRAINT fk_Similars_Visitors1
     FOREIGN KEY (Visitors_idVisitors)
     REFERENCES Visitors (idVisitors),
@@ -189,8 +189,8 @@ DROP TABLE IF EXISTS Has_sale ;
 
 create type TypeSales as enum ('Korting', '1Plus1');
 CREATE TABLE IF NOT EXISTS Has_sale (
-  Sessions_idSessions INT NOT NULL,
-  Products_idProducts INT NOT NULL,
+  Sessions_idSessions SERIAL NOT NULL,
+  Products_idProducts SERIAL NOT NULL,
   TypeSale TypeSales NULL,
   AmountKorting INT NULL,
   CONSTRAINT fk_Has_sale_Sessions1
@@ -208,11 +208,9 @@ CREATE TABLE IF NOT EXISTS Has_sale (
 DROP TABLE IF EXISTS Properties ;
 
 CREATE TABLE IF NOT EXISTS Properties (
-  Products_idProducts INT NOT NULL,
+  Products_idProducts SERIAL NOT NULL,
   Properties VARCHAR(255) NOT NULL,
   CONSTRAINT fk_Properties_Products1
     FOREIGN KEY (Products_idProducts)
     REFERENCES Products (idProducts))
 ;
-
-
