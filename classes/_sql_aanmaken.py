@@ -1,10 +1,6 @@
 import psycopg2
-import csv
 
-
-
-class DataSender:
-
+class CreateDatabase:
 
     def __init__(self):
         pass
@@ -19,13 +15,18 @@ class DataSender:
         )
         return con
 
-    def send(self, file):
+    def drop_database(self):
         con = self.openconnection()
-        cur = con.cursor()
-        with open(file, 'r') as csvf:
-            reader = csv.reader(csvf)
-            next(reader)
-            for row in reader:
-                cur.execute("insert into products (idproducts, name, brand, category, deeplink, fastmover, gender, herhaalaankopen) "
-                            "values (%s, %s, %s, %s, %s, %s, %s, %s)",(row))
-        con.commit()
+        cursor = con.cursor()
+        drop_table_command = "DROP DATABASE huwebshop"
+        cursor.execute(drop_table_command)
+
+    def create_database(self):
+        con = self.openconnection()
+        cursor = con.cursor()
+        create_database_command = "CREATE DATABASE huwebshop"
+        cursor.execute(create_database_command)
+
+    def fill_database(self):
+        con = self.openconnection()
+        cursor = con.cursor()
