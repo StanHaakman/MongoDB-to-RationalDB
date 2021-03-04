@@ -59,9 +59,17 @@ python3 install psycopg2
 python3 install csv
 ```
 
+Voordat het programma werkt moet er een file aangemaakt worden genaamd: dbsecret.py
+
+Geef in deze file de volgende onderdelen aan en verander de inhoud naar jou eigen postgress gegevens:
+```
+user = 'user'
+database = 'dbname'
+password = 'password'
+```
+
 Open het project folder in de terminal en run dit commando:
 
 ```
 python3 main.py
 ```
-
