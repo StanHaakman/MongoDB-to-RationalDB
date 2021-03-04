@@ -4,6 +4,8 @@ import psycopg2
 from classes.tests._MongodbConnectieCheck import *
 from classes._data_recieve import Getdata
 from classes._data_converter import Converter
+from classes._data_sender import DataSender
+from classes._sql_aanmaken import CreateDatabase
 
 myclient = MongoClient("mongodb://localhost:27017/")
 mydb = myclient["huwebshop"]
@@ -17,7 +19,13 @@ print('first product name of desired letter: ', databaseData.name_start_letter(l
 print('average price of all products: ', databaseData.average_price())
 
 convert = Converter(mydb, myclient)
+sender = DataSender()
+create = CreateDatabase()
 
-convert.products(['_id', 'brand', 'name', 'category'])
-convert.visitors(['_id', 'buids', 'recommendations'])
-convert.sessions(['_id', 'user_agent', 'segment'])
+convert.products(['_id', 'name', 'brand', 'category', 'deeplink', 'fast_mover', 'gender', 'herhaalaankopen'])
+# convert.visitors(['_id', 'buids', 'recommendations'])
+# convert.sessions(['_id', 'user_agent', 'segment'])
+
+create.
+
+sender.send(file='products.csv')
