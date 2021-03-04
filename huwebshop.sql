@@ -16,7 +16,7 @@
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS Products ;
 
-create type genders as enum ('Male', 'Female', 'Unspecified');
+create type genders as enum ('Man', 'Vrouw', 'Unspecified');
 CREATE TABLE IF NOT EXISTS Products (
   idProducts SERIAL NOT NULL,
   name VARCHAR(255) NULL,
