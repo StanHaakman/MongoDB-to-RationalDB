@@ -16,7 +16,12 @@ class Converter:
             c = 0
             for item in dbtable.find():
                 try:
-                    writer.writerow({i: item.get(i) for i in fieldnames})
+                    writer.writerow(
+                        {
+                            i: item.get(i) if '.' not in i else item.get(i.split('.', 1)[0])[i.split('.', 1)[1]]
+                            for i in fieldnames
+                        }
+                    )
                 except:
                     continue
                 c += 1

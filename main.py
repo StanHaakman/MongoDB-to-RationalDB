@@ -18,6 +18,6 @@ print('average price of all products: ', databaseData.average_price())
 
 convert = Converter(mydb, myclient)
 
-convert.products(['_id', 'brand', 'name', 'category'])
-convert.visitors(['_id', 'buids', 'recommendations'])
-convert.sessions(['_id', 'user_agent', 'segment'])
+convert.products(['_id', 'price.selling_price'])
+# convert.visitors(['_id', 'buids', 'recommendations'])
+# convert.sessions(['_id', 'user_agent', 'segment'])
