@@ -26,8 +26,8 @@ class DataSender:
             reader = csv.reader(csvf)
             next(reader)
             for row in reader:
-                cur.execute("insert into products (idproducts, name, brand, category, deeplink, fastmover, gender, herhaalaankopen) "
-                            "values (%s, %s, %s, %s, %s, %s, %s, %s)",(row))
+                cur.execute("insert into products (idproducts, name, brand, category, deeplink, fastmover, target, herhaalaankopen, price) "
+                            "values (%s, %s, %s, %s, %s, %s, %s, %s, %s)",(row))
         con.commit()
 
     def send_sessions(self, file):
@@ -37,8 +37,8 @@ class DataSender:
             reader = csv.reader(csvf)
             next(reader)
             for row in reader:
-                cur.execute("insert into products (idproducts, name, brand, category, deeplink, fastmover, gender, herhaalaankopen) "
-                            "values (%s, %s, %s, %s, %s, %s, %s, %s)",(row))
+                cur.execute("insert into products (idsessions, buids_buids, device_family, sessietime) "
+                            "values (%s, %s, %s, %s)",(row))
         con.commit()
 
     def send_visitors(self, file):
@@ -48,6 +48,6 @@ class DataSender:
             reader = csv.reader(csvf)
             next(reader)
             for row in reader:
-                cur.execute("insert into products (idproducts, name, brand, category, deeplink, fastmover, gender, herhaalaankopen) "
-                            "values (%s, %s, %s, %s, %s, %s, %s, %s)",(row))
+                cur.execute("insert into products (idvisitors, latest_activity) "
+                            "values (%s, %s)",(row))
         con.commit()

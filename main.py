@@ -19,11 +19,11 @@ databaseData = Getdata(myclient=myclient, mydb=mydb)
 # print('average price of all products: ', databaseData.average_price())
 
 convert = Converter(mydb, myclient)
-# sender = DataSender()
-# create = CreateDatabase()
-
-convert.products(['_id', 'price.selling_price', 'name', 'brand', 'category', 'deeplink', 'fast_mover', 'gender', 'herhaalaankopen'])
-# convert.visitors(['_id', 'buids', 'recommendations'])
-# convert.sessions(['_id', 'user_agent', 'segment'])
-
+sender = DataSender()
+create = CreateDatabase()
+create.drop_create()
+# convert.products(['_id', 'name', 'brand', 'category', 'deeplink', 'fast_mover', 'gender', 'herhaalaankopen', 'price.selling_price'])
+# # convert.visitors(['_id', 'recommendations'])
+# # convert.sessions(['_id', 'buid', 'user_agent.identifier', 'session_start', 'session_end'])
+#
 # sender.send_products(file='products.csv')

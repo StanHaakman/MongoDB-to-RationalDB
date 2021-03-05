@@ -14,9 +14,9 @@
 -- -----------------------------------------------------
 -- Table HUWebshop.Products
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS Products ;
+DROP TABLE IF EXISTS  Products CASCADE ;
 
-create type genders as enum ('Man', 'Vrouw', 'Unspecified');
+create type genders as enum ('Man', 'Vrouw', 'Unisex', 'Baby', 'Gezin', 'B2B', 'Senior', 'Kinderen');
 CREATE TABLE IF NOT EXISTS Products (
   idProducts SERIAL NOT NULL,
   name VARCHAR(255) NULL,
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS Products (
   category VARCHAR(255) NULL,
   deeplink VARCHAR(255) NULL,
   fastmover BOOLEAN NULL,
-  gender genders NULL,
+  target genders NULL,
   herhaalaankopen BOOLEAN NULL,
   price DECIMAL NULL,
   stocklevel INT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS Products (
 -- -----------------------------------------------------
 -- Table HUWebshop.Visitors
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS Visitors ;
+DROP TABLE IF EXISTS  Visitors CASCADE ;
 
 CREATE TABLE IF NOT EXISTS Visitors (
   idVisitors SERIAL NOT NULL,
@@ -48,12 +48,12 @@ CREATE TABLE IF NOT EXISTS Visitors (
 -- -----------------------------------------------------
 -- Table HUWebshop.Buids
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS Buids ;
+DROP TABLE IF EXISTS Buids CASCADE ;
 
 CREATE TABLE IF NOT EXISTS Buids (
   buids SERIAL NOT NULL,
   Visitors_idVisitors INT NOT NULL,
-  Device VARCHAR(45) NULL,
+  identifier VARCHAR(255) NULL,
   PRIMARY KEY (buids),
   CONSTRAINT fk_Buids_Visitors
     FOREIGN KEY (Visitors_idVisitors)
@@ -64,13 +64,14 @@ CREATE TABLE IF NOT EXISTS Buids (
 -- -----------------------------------------------------
 -- Table HUWebshop.Sessions
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS Sessions ;
+DROP TABLE IF EXISTS  Sessions CASCADE ;
 
 CREATE TABLE IF NOT EXISTS Sessions (
   idSessions SERIAL NOT NULL,
   Buids_buids int NOT NULL,
-  device_family VARCHAR(255) NULL,
-  sessietime TIME NULL,
+  identifier VARCHAR(255) NULL,
+  sessie_start TIME NULL,
+  sessie_end TIME NULL,
   PRIMARY KEY (idSessions),
   CONSTRAINT fk_Sessions_Buids1
     FOREIGN KEY (Buids_buids)
@@ -81,7 +82,7 @@ CREATE TABLE IF NOT EXISTS Sessions (
 -- -----------------------------------------------------
 -- Table `HUWebshop`.`events`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS events ;
+DROP TABLE IF EXISTS  events CASCADE ;
 
 CREATE TABLE IF NOT EXISTS events (
   Products_idProducts SERIAL NOT NULL,
@@ -99,7 +100,7 @@ CREATE TABLE IF NOT EXISTS events (
 -- -----------------------------------------------------
 -- Table `HUWebshop`.`order`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS orders ;
+DROP TABLE IF EXISTS orders CASCADE ;
 
 CREATE TABLE IF NOT EXISTS orders (
   Products_idProducts SERIAL NOT NULL,
@@ -117,7 +118,7 @@ CREATE TABLE IF NOT EXISTS orders (
 -- -----------------------------------------------------
 -- Table `HUWebshop`.`viewed_before`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS viewed_before ;
+DROP TABLE IF EXISTS viewed_before CASCADE ;
 
 CREATE TABLE IF NOT EXISTS viewed_before (
   Visitors_idVisitors SERIAL NOT NULL,
@@ -135,7 +136,7 @@ CREATE TABLE IF NOT EXISTS viewed_before (
 -- -----------------------------------------------------
 -- Table `HUWebshop`.`Category`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS Category ;
+DROP TABLE IF EXISTS Category CASCADE ;
 
 CREATE TABLE IF NOT EXISTS Category (
   idCategory SERIAL NOT NULL,
@@ -151,7 +152,7 @@ CREATE TABLE IF NOT EXISTS Category (
 -- -----------------------------------------------------
 -- Table `HUWebshop`.`Subcategory`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS Subcategory ;
+DROP TABLE IF EXISTS  Subcategory CASCADE;
 
 CREATE TABLE IF NOT EXISTS Subcategory (
   idSubcategory SERIAL NOT NULL,
@@ -168,7 +169,7 @@ CREATE TABLE IF NOT EXISTS Subcategory (
 -- -----------------------------------------------------
 -- Table `HUWebshop`.`Similars`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS Similars ;
+DROP TABLE IF EXISTS  Similars CASCADE;
 
 CREATE TABLE IF NOT EXISTS Similars (
   Visitors_idVisitors SERIAL NOT NULL,
@@ -185,7 +186,7 @@ CREATE TABLE IF NOT EXISTS Similars (
 -- -----------------------------------------------------
 -- Table `HUWebshop`.`Has_sale`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS Has_sale ;
+DROP TABLE IF EXISTS  Has_sale CASCADE;
 
 create type TypeSales as enum ('Korting', '1Plus1');
 CREATE TABLE IF NOT EXISTS Has_sale (
@@ -205,7 +206,7 @@ CREATE TABLE IF NOT EXISTS Has_sale (
 -- -----------------------------------------------------
 -- Table `HUWebshop`.`Properties`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS Properties ;
+DROP TABLE IF EXISTS  Properties CASCADE ;
 
 CREATE TABLE IF NOT EXISTS Properties (
   Products_idProducts SERIAL NOT NULL,
