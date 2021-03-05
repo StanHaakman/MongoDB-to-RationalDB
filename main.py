@@ -23,7 +23,7 @@ sender = DataSender()
 create = CreateDatabase()
 
 convert.products(['_id', 'name', 'brand', 'category', 'deeplink', 'fast_mover', 'gender', 'herhaalaankopen', 'price.selling_price'])
-# convert.visitors(['_id', 'buids', 'recommendations'])
+# convert.visitors(['_id', 'recommendations'])
 # convert.sessions(['_id', 'buid', 'user_agent.identifier', 'session_start', 'session_end'])
 
 sender.send_products(file='products.csv')

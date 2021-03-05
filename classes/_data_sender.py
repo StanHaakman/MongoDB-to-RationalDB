@@ -48,6 +48,6 @@ class DataSender:
             reader = csv.reader(csvf)
             next(reader)
             for row in reader:
-                cur.execute("insert into products (idvisitors, previously_recommend, latest_activity) "
-                            "values (%s, %s, %s)",(row))
+                cur.execute("insert into products (idvisitors, latest_activity) "
+                            "values (%s, %s)",(row))
         con.commit()
