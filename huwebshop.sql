@@ -53,7 +53,7 @@ DROP TABLE IF EXISTS Buids ;
 CREATE TABLE IF NOT EXISTS Buids (
   buids SERIAL NOT NULL,
   Visitors_idVisitors INT NOT NULL,
-  Device VARCHAR(45) NULL,
+  Device VARCHAR(255) NULL,
   PRIMARY KEY (buids),
   CONSTRAINT fk_Buids_Visitors
     FOREIGN KEY (Visitors_idVisitors)
@@ -69,8 +69,9 @@ DROP TABLE IF EXISTS Sessions ;
 CREATE TABLE IF NOT EXISTS Sessions (
   idSessions SERIAL NOT NULL,
   Buids_buids int NOT NULL,
-  device_family VARCHAR(255) NULL,
-  sessietime TIME NULL,
+  Device VARCHAR(255) NULL,
+  sessie_start TIME NULL,
+  sessie_end TIME NULL,
   PRIMARY KEY (idSessions),
   CONSTRAINT fk_Sessions_Buids1
     FOREIGN KEY (Buids_buids)
