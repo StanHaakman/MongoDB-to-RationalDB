@@ -22,10 +22,8 @@ convert = Converter(mydb, myclient)
 sender = DataSender()
 create = CreateDatabase()
 
-convert.products(['_id', 'name', 'brand', 'category', 'deeplink', 'fast_mover', 'gender', 'herhaalaankopen'])
+convert.products(['_id', 'price.selling_price', 'name', 'brand', 'category', 'deeplink', 'fast_mover', 'gender', 'herhaalaankopen'])
 # convert.visitors(['_id', 'buids', 'recommendations'])
 # convert.sessions(['_id', 'user_agent', 'segment'])
-
-create.
 
 sender.send(file='products.csv')

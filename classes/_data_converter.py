@@ -11,12 +11,18 @@ class Converter:
 
     def convert_to_csv(self, fieldnames, filename, dbtable):
         with open(filename, 'w', newline='') as csvout:
-            writer = csv.DictWriter(csvout, fieldnames=fieldnames)
+            writer = csv.DictWriter(csvout, fieldnames=[i if '.' not in i else i.split('.', 1)[1] for i in fieldnames])
             writer.writeheader()
+            content = dbtable.find()
             c = 0
-            for item in dbtable.find():
+            for item in content:
                 try:
-                    writer.writerow({i: item.get(i) for i in fieldnames})
+                    writer.writerow(
+                        {
+                            i if '.' not in i else i.split('.', 1)[1]: item.get(i) if '.' not in i else item.get(i.split('.', 1)[0])[i.split('.', 1)[1]]
+                            for i in fieldnames
+                        }
+                    )
                 except:
                     continue
                 c += 1
