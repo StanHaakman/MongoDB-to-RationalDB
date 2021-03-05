@@ -16,7 +16,7 @@
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS Products ;
 
-create type genders as enum ('Man', 'Vrouw', 'Unspecified');
+create type targets as enum ('Man', 'Vrouw', 'Unisex', 'Baby', 'Gezin', 'B2B', 'Senior', 'Kinderen');
 CREATE TABLE IF NOT EXISTS Products (
   idProducts SERIAL NOT NULL,
   name VARCHAR(255) NULL,
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS Products (
   category VARCHAR(255) NULL,
   deeplink VARCHAR(255) NULL,
   fastmover BOOLEAN NULL,
-  gender genders NULL,
+  target targets NULL,
   herhaalaankopen BOOLEAN NULL,
   price DECIMAL NULL,
   stocklevel INT NULL,
@@ -69,7 +69,7 @@ DROP TABLE IF EXISTS Sessions ;
 CREATE TABLE IF NOT EXISTS Sessions (
   idSessions SERIAL NOT NULL,
   Buids_buids int NOT NULL,
-  device_family VARCHAR(255) NULL,
+  identifier VARCHAR(255) NULL,
   sessietime TIME NULL,
   PRIMARY KEY (idSessions),
   CONSTRAINT fk_Sessions_Buids1
