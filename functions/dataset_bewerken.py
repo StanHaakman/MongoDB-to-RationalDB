@@ -1,6 +1,6 @@
 import math
 import pandas as pd
-import numpy as np
+# import numpy as np
 
 
 def id_filter(dataframe):
@@ -54,7 +54,7 @@ def id_informatie(dataframe):
 
 
 # STAP 1
-df = pd.read_csv('products.csv', encoding='latin-1')
+df = pd.read_csv('products.csv', encoding='utf-8')
 # print(df.columns)  # weergeef alle kolomnamen
 df.columns = ['_id', 'selling_price', 'name', 'brand', 'category', 'deeplink',
               'fast_mover', 'gender', 'herhaalaankopen']  # bepaal kolomnamen
@@ -64,7 +64,7 @@ df = id_filter(df)
 df.to_csv('products.csv', index=False)
 
 # STAP 2
-df = pd.read_csv('products.csv', encoding='latin-1')
+df = pd.read_csv('products.csv', encoding='utf-8')
 df = id_datatype_nan(df)
 df = id_duplicates(df)
 

@@ -10,7 +10,7 @@ class Converter:
         self.mydb = mydb
 
     def convert_to_csv(self, fieldnames, filename, dbtable):
-        with open(filename, 'w', newline='') as csvout:
+        with open(filename, 'w', newline='', encoding='utf-8') as csvout:
             writer = csv.DictWriter(csvout, fieldnames=[i if '.' not in i else i.split('.', 1)[1] for i in fieldnames])
             writer.writeheader()
             content = dbtable.find()
