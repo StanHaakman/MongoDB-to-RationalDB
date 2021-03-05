@@ -5,6 +5,12 @@ class CreateDatabase:
     def __init__(self):
         pass
 
+    def drop_create(self):
+        self.drop_database()
+        self.create_database()
+        self.fill_database()
+        print("database created")
+
     def openconnection(self):
         con = psycopg2.connect(
             host='localhost',  # De host waarop je database runt
@@ -20,13 +26,19 @@ class CreateDatabase:
         cursor = con.cursor()
         drop_table_command = "DROP DATABASE huwebshop"
         cursor.execute(drop_table_command)
+        con.commit()
 
     def create_database(self):
         con = self.openconnection()
         cursor = con.cursor()
         create_database_command = "CREATE DATABASE huwebshop"
         cursor.execute(create_database_command)
+        con.commit()
 
     def fill_database(self):
         con = self.openconnection()
         cursor = con.cursor()
+        with open('huwebshop.sql', 'r') as file:
+            lines = file.readlines()
+        cursor.execute(lines)
+        con.commit()

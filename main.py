@@ -26,4 +26,4 @@ convert.products(['_id', 'price.selling_price', 'name', 'brand', 'category', 'de
 # convert.visitors(['_id', 'buids', 'recommendations'])
 # convert.sessions(['_id', 'user_agent', 'segment'])
 
-sender.send(file='products.csv')
+sender.send_products(file='products.csv')
