@@ -12,18 +12,18 @@ mydb = myclient["huwebshop"]
 
 databaseData = Getdata(myclient=myclient, mydb=mydb)
 
-print('first product name and price: ', databaseData.first_name_price())
+# print('first product name and price: ', databaseData.first_name_price())
 
-print('first product name of desired letter: ', databaseData.name_start_letter(letter='R'))
+# print('first product name of desired letter: ', databaseData.name_start_letter(letter='R'))
 
-print('average price of all products: ', databaseData.average_price())
+# print('average price of all products: ', databaseData.average_price())
 
 convert = Converter(mydb, myclient)
-sender = DataSender()
-create = CreateDatabase()
+# sender = DataSender()
+# create = CreateDatabase()
 
 convert.products(['_id', 'price.selling_price', 'name', 'brand', 'category', 'deeplink', 'fast_mover', 'gender', 'herhaalaankopen'])
 # convert.visitors(['_id', 'buids', 'recommendations'])
 # convert.sessions(['_id', 'user_agent', 'segment'])
 
-sender.send_products(file='products.csv')
+# sender.send_products(file='products.csv')
