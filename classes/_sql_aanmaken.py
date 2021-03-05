@@ -76,7 +76,6 @@ class CreateDatabase:
                 tempLst.append(i + ';')
             tempLst.remove(tempLst[-1])
             content_list = tempLst
-            print(content_list)
 
             for i in content_list:
                 cursor.execute(i)

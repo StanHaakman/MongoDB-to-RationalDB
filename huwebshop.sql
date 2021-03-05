@@ -16,7 +16,7 @@
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS  Products CASCADE ;
 
-create type genders as enum ('Man', 'Vrouw', 'Unisex', 'Baby', 'Gezin', 'B2B', 'Senior', 'Kinderen');
+create type genders as enum ('Man', 'Vrouw', 'Unisex', 'Baby', 'Gezin', 'B2B', 'Senior', 'Kinderen', '');
 CREATE TABLE IF NOT EXISTS Products (
   idProducts SERIAL NOT NULL,
   name VARCHAR(255) NULL,

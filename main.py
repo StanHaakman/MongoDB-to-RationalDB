@@ -26,4 +26,4 @@ create.drop_create()
 # # convert.visitors(['_id', 'recommendations'])
 # # convert.sessions(['_id', 'buid', 'user_agent.identifier', 'session_start', 'session_end'])
 #
-# sender.send_products(file='products.csv')
+# sender.send_products(file='functions/products.csv')
