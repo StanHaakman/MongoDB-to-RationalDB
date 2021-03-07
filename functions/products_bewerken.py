@@ -26,8 +26,7 @@ def id_datatype_nan(dataframe):
 
 
 def id_duplicates(dataframe):
-    c = 0
-    d = 0
+    c, d = 0, 0
     id_verbeterd = []
     for value in dataframe['_id']:
         if value not in id_verbeterd:
@@ -35,10 +34,14 @@ def id_duplicates(dataframe):
         else:
             d += 1
             while True:
+                if c % 100 == 1:
+                    print(f'{c} punten verwerkt')
                 if c in id_verbeterd:
                     c += 1
+                    print(f'nu {c}')
                 else:
                     break
+            c += 1
             id_verbeterd.append(c)
     print(c, d)
     return dataframe
