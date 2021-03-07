@@ -57,6 +57,9 @@ def id_duplicates(dataframe):
             id_verbeterd.append(c)
     print('{} duplicaten gevonden. {} loops nodig gehad om duplicaten te verhelpen.'.format(d, c))
     print('alle waardes in kolom id zijn vanaf nu uniek.')
+
+    dataframe._id = id_verbeterd
+
     return dataframe
 
 
