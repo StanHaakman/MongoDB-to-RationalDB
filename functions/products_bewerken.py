@@ -1,4 +1,6 @@
 import math
+import random
+
 import pandas as pd
 # import numpy as np
 
@@ -7,9 +9,17 @@ def id_filter(dataframe):
     id = dataframe[['_id']]  # selecteer gewenste kolomnaam
     id_lijst = list(id._id)  # zet om naar een lijst
     id_verbeterd = []
+    last_value = int
+
     for value in id_lijst:
-        value = ''.join(filter(str.isdigit, str(value)))  # hier strippen
+        waarde = random.randint(0, 9)
+        while waarde == last_value:
+            waarde = random.randint(0, 9)
+
+        value = str(waarde).join(filter(str.isdigit, str(value)))
         id_verbeterd.append(value)
+        last_value = waarde
+
     dataframe._id = id_verbeterd  # pas kolom aan in data dataframe
     return dataframe
 

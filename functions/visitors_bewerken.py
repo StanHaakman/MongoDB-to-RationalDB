@@ -17,7 +17,7 @@ def id_filteren(dataframe):
             waarde = random.randint(0, 9)
 
         value = str(waarde).join(filter(str.isdigit, str(value)))
-        # time.sleep(0.1)
+
         id_verbeterd.append(value)
         last_value = waarde
 
