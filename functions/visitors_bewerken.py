@@ -25,7 +25,7 @@ def id_duplicates_old(dataframe):
         else:
             d += 1
             while True:
-                if c % 1000 == 1:
+                if c % 10000 == 1:
                     print(f'{c} punten verwerkt')
                 if c in id_verbeterd:
                     c += 1
