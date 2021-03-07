@@ -21,7 +21,7 @@ class CreateDatabase:
             host='localhost',  # De host waarop je database runt
             database=db,
             user='postgres',  # Als wat voor gebruiker je connect, standaard postgres als je niets veranderd
-            password='Elvis&Presley'  # Wachtwoord die je opgaf bij installatie
+            password='postgres'  # Wachtwoord die je opgaf bij installatie
             # port=5432 runt standaard op deze port en is alleen nodig als je de port handmatig veranderd
         )
         return con
@@ -76,7 +76,6 @@ class CreateDatabase:
                 tempLst.append(i + ';')
             tempLst.remove(tempLst[-1])
             content_list = tempLst
-            print(content_list)
 
             for i in content_list:
                 cursor.execute(i)
