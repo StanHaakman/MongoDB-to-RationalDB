@@ -1,6 +1,3 @@
-import pymongo
-import psycopg2
-
 from classes.tests._MongodbConnectieCheck import *
 from classes._data_recieve import Getdata
 from classes._data_converter import Converter
@@ -21,7 +18,8 @@ databaseData = Getdata(myclient=myclient, mydb=mydb)
 convert = Converter(mydb, myclient)
 sender = DataSender()
 create = CreateDatabase()
-# create.drop_create()
+# create.drop_create()cts(file='products.csv')
+
 convert.products(['_id', 'name', 'brand', 'category', 'deeplink', 'fast_mover', 'gender', 'herhaalaankopen', 'price.selling_price'])
 # # convert.visitors(['_id', 'recommendations'])
 # # convert.sessions(['_id', 'buid', 'user_agent.identifier', 'session_start', 'session_end'])
