@@ -77,6 +77,19 @@ def gender_nan(dataframe):
     return dataframe
 
 
+def herhaalaankomen_null(dataframe):
+    toegestaan = [True, False]
+    herhaalnagelopen = []
+    for value in dataframe['herhaalaankopen']:
+        if value not in toegestaan:
+            herhaalnagelopen.append(False)
+        else:
+            herhaalnagelopen.append(value)
+
+    dataframe['herhaalaankopen'] = herhaalnagelopen
+    return dataframe
+
+
 def id_informatie(dataframe):
     print()
     print(dataframe.isna().sum())
@@ -101,6 +114,7 @@ df = pd.read_csv('products.csv', encoding='utf-8')
 df = id_datatype_nan(df)
 df = id_duplicates(df)
 df = gender_nan(df)
+df = herhaalaankomen_null(df)
 
 # STAP 3
 # id_informatie(df)  # voor meer informatie over de dataset
