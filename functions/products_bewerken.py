@@ -2,7 +2,6 @@ import math
 import random
 
 import pandas as pd
-# import numpy as np
 
 
 def id_filter(dataframe):

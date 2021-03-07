@@ -1,6 +1,3 @@
-import pymongo
-import psycopg2
-
 from classes.tests._MongodbConnectieCheck import *
 from classes._data_recieve import Getdata
 from classes._data_converter import Converter
