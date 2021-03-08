@@ -207,7 +207,7 @@ CREATE TABLE IF NOT EXISTS Has_sale (
 DROP TABLE IF EXISTS  Properties CASCADE ;
 
 CREATE TABLE IF NOT EXISTS Properties (
-  Products_idProducts BIGINT NOT NULL,
+  Products_idProducts VARCHAR(255) NOT NULL,
   Properties VARCHAR(255) NOT NULL,
   CONSTRAINT fk_Properties_Products1
     FOREIGN KEY (Products_idProducts)
