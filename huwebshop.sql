@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS Visitors (
 DROP TABLE IF EXISTS Buids CASCADE ;
 
 CREATE TABLE IF NOT EXISTS Buids (
-  buids BIGINT NOT NULL,
+  buids VARCHAR(255) NOT NULL,
   Visitors_idVisitors SERIAL NOT NULL,
   identifier VARCHAR(255) NULL,
   PRIMARY KEY (buids),
@@ -64,16 +64,16 @@ CREATE TABLE IF NOT EXISTS Buids (
 -- -----------------------------------------------------
 -- Table HUWebshop.Sessions
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS  Sessions CASCADE ;
+DROP TABLE IF EXISTS Sessions CASCADE ;
 
 CREATE TABLE IF NOT EXISTS Sessions (
-  idSessions BIGINT NOT NULL,
-  Buids_buids int NOT NULL,
+  idSessions SERIAL NOT NULL,
+  Buids_buids VARCHAR(255) NOT NULL,
   identifier VARCHAR(255) NULL,
-  sessie_start TIME NULL,
-  sessie_end TIME NULL,
+  sessie_start TIMESTAMP NULL,
+  sessie_end TIMESTAMP NULL,
   PRIMARY KEY (idSessions),
-  CONSTRAINT fk_Sessions_Buids1
+  CONSTRAINT fk_Sessions_Buids
     FOREIGN KEY (Buids_buids)
     REFERENCES Buids (buids))
 ;
