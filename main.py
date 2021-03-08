@@ -23,8 +23,8 @@ create = CreateDatabase()
 
 # convert.products(['_id', 'name', 'brand', 'category', 'deeplink', 'fast_mover', 'gender', 'herhaalaankopen', 'price.selling_price'])
 # convert.visitors(['recommendations.latest_visit'])
-# convert.sessions(['_id', 'buid', 'user_agent.identifier', 'session_start', 'session_end'])
-#
+convert.sessions(['buid', 'user_agent.identifier', 'session_start', 'session_end'])
+
 # sender.send_products(file='functions/products.csv')
 # sender.send_visitors(file='functions/visitors.csv')
-sender.send_sessions(file='functions/sessions.csv')
+# sender.send_sessions(file='sessions.csv')

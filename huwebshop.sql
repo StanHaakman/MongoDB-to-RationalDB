@@ -86,7 +86,7 @@ DROP TABLE IF EXISTS  events CASCADE ;
 
 CREATE TABLE IF NOT EXISTS events (
   Products_idProducts BIGINT NOT NULL,
-  Sessions_idSessions BIGINT NOT NULL,
+  Sessions_idSessions SERIAL NOT NULL,
   Event VARCHAR(255) NULL,
   CONSTRAINT fk_events_Products1
     FOREIGN KEY (Products_idProducts)
@@ -104,7 +104,7 @@ DROP TABLE IF EXISTS orders CASCADE ;
 
 CREATE TABLE IF NOT EXISTS orders (
   Products_idProducts BIGINT NOT NULL,
-  Sessions_idSessions INT NOT NULL,
+  Sessions_idSessions SERIAL NOT NULL,
   Amount INT NOT NULL,
   CONSTRAINT fk_orders_Products1
     FOREIGN KEY (Products_idProducts)
@@ -190,7 +190,7 @@ DROP TABLE IF EXISTS  Has_sale CASCADE;
 
 create type TypeSales as enum ('Korting', '1Plus1');
 CREATE TABLE IF NOT EXISTS Has_sale (
-  Sessions_idSessions BIGINT NOT NULL,
+  Sessions_idSessions SERIAL NOT NULL,
   Products_idProducts BIGINT NOT NULL,
   TypeSale TypeSales NULL,
   AmountKorting INT NULL,
