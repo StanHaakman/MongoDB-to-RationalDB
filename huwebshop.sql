@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS Sessions (
 DROP TABLE IF EXISTS  events CASCADE ;
 
 CREATE TABLE IF NOT EXISTS events (
-  Products_idProducts BIGINT NOT NULL,
+  Products_idProducts VARCHAR(255) NOT NULL,
   Sessions_idSessions SERIAL NOT NULL,
   Event VARCHAR(255) NULL,
   CONSTRAINT fk_events_Products1
@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS events (
 DROP TABLE IF EXISTS orders CASCADE ;
 
 CREATE TABLE IF NOT EXISTS orders (
-  Products_idProducts BIGINT NOT NULL,
+  Products_idProducts VARCHAR(255) NOT NULL,
   Sessions_idSessions SERIAL NOT NULL,
   Amount INT NOT NULL,
   CONSTRAINT fk_orders_Products1
@@ -120,7 +120,7 @@ DROP TABLE IF EXISTS viewed_before CASCADE ;
 
 CREATE TABLE IF NOT EXISTS viewed_before (
   Visitors_idVisitors SERIAL NOT NULL,
-  Products_idProducts BIGINT NOT NULL,
+  Products_idProducts VARCHAR(255) NOT NULL,
   Timedate timestamp NULL,
   CONSTRAINT fk_viewed_before_Products1
     FOREIGN KEY (Products_idProducts)
@@ -138,7 +138,7 @@ DROP TABLE IF EXISTS Category CASCADE ;
 
 CREATE TABLE IF NOT EXISTS Category (
   idCategory BIGINT NOT NULL,
-  Products_idProducts BIGINT NOT NULL,
+  Products_idProducts VARCHAR(255) NOT NULL,
   _name VARCHAR(255) NULL,
   PRIMARY KEY (idCategory),
   CONSTRAINT fk_Category_Products1
@@ -171,7 +171,7 @@ DROP TABLE IF EXISTS  Similars CASCADE;
 
 CREATE TABLE IF NOT EXISTS Similars (
   Visitors_idVisitors SERIAL NOT NULL,
-  Products_idProducts BIGINT NOT NULL,
+  Products_idProducts VARCHAR(255) NOT NULL,
   CONSTRAINT fk_Similars_Visitors1
     FOREIGN KEY (Visitors_idVisitors)
     REFERENCES Visitors (idVisitors),
@@ -189,7 +189,7 @@ DROP TABLE IF EXISTS  Has_sale CASCADE;
 create type TypeSales as enum ('Korting', '1Plus1');
 CREATE TABLE IF NOT EXISTS Has_sale (
   Sessions_idSessions SERIAL NOT NULL,
-  Products_idProducts BIGINT NOT NULL,
+  Products_idProducts VARCHAR(255) NOT NULL,
   TypeSale TypeSales NULL,
   AmountKorting INT NULL,
   CONSTRAINT fk_Has_sale_Sessions1
