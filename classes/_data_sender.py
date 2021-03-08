@@ -29,7 +29,7 @@ class DataSender:
                 cur.execute("insert into products (idproducts, name, brand, category, deeplink, fastmover, target, herhaalaankopen, price) "
                             "values (%s, %s, %s, %s, %s, %s, %s, %s, %s)",(row))
         con.commit()
-        print("Products is now fucking done")
+        print("Products is now done")
 
     def send_sessions(self, file):
         con = self.openconnection()
@@ -41,8 +41,14 @@ class DataSender:
                 cur.execute("insert into products (idsessions, buids_buids, device_family, sessietime) "
                             "values (%s, %s, %s, %s)",(row))
         con.commit()
+        print("Sessions is now done")
 
     def send_visitors(self, file):
+        '''
+
+        :param file:
+        :return:
+        '''
         con = self.openconnection()
         cur = con.cursor()
         with open(file, 'r', encoding="utf-8") as csvf:
@@ -52,4 +58,4 @@ class DataSender:
                 cur.execute("insert into Visitors (latest_visit) "
                             "values (%s)",(row))
         con.commit()
-        print("Visitors is now fucking done")
+        print("Visitors is now done")
