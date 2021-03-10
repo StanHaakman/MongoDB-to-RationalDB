@@ -30,10 +30,13 @@ df['doelgroep'] = df['doelgroep'].where(df['doelgroep'] != 'volwassene', 'Volwas
 
 df.columns = ['product_id', 'merk', 'categorie', 'kleur', 'geslacht', 'herhaalaankopen',
               'naam', 'prijs', 'doelgroep', 'soort', 'variant',
-              'sub_categorie', 'sub_sub_categorie']  # bepaal kolomnamen en volgorde
+              'sub_categorie', 'sub_sub_categorie']  # bepaal kolomnamen.
 
-print(df.isna().sum())
-print(df.sample(10))
+df = df[['product_id', 'merk', 'prijs', 'doelgroep', 'categorie',
+         'sub_categorie', 'sub_sub_categorie', 'soort', 'variant',
+         'geslacht', 'kleur', 'naam', 'herhaalaankopen']]  # bepaal kolomvolgorde.
 
-df.to_csv('products.csv', index=False)  # opslaan naar csv
+print(df.sample(15))
+
+# df.to_csv('products.csv', index=False)  # opslaan naar csv
 print('processen beeindigd en opgeslagen!')
