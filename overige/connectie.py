@@ -14,10 +14,10 @@ def connect():
         print('Connecting to the PostgreSQL database...')
         conn = psycopg2.connect(**params)
 
-        # create a cursor
+        # create classes cursor
         cur = conn.cursor()
 
-        # execute a statement
+        # execute classes statement
         print('PostgreSQL database version:')
         cur.execute('SELECT version()')
 
