@@ -44,25 +44,6 @@ CREATE TABLE IF NOT EXISTS Visitors (
   PRIMARY KEY (idVisitors))
 ;
 
-
--- -----------------------------------------------------
--- Table HUWebshop.Buids
--- -----------------------------------------------------
-DROP TABLE IF EXISTS Buids CASCADE ;
-
-CREATE TABLE IF NOT EXISTS Buids (
-  buids VARCHAR(255) NOT NULL,
-  Visitors_idVisitors SERIAL NOT NULL,
-  PRIMARY KEY (buids),
-  CONSTRAINT fk_Buids_Visitors
-    FOREIGN KEY (Visitors_idVisitors)
-    REFERENCES Visitors (idVisitors),
-  CONSTRAINT fk_Buids_Sessions
-    FOREIGN KEY (Sessions_idSessions)
-    REFERENCES Buids (idSessions))
-;
-
-
 -- -----------------------------------------------------
 -- Table HUWebshop.Sessions
 -- -----------------------------------------------------
@@ -76,6 +57,24 @@ CREATE TABLE IF NOT EXISTS Sessions (
   PRIMARY KEY (idSessions))
 ;
 
+
+-- -----------------------------------------------------
+-- Table HUWebshop.Buids
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS Buids CASCADE ;
+
+CREATE TABLE IF NOT EXISTS Buids (
+  buids VARCHAR(255) NOT NULL,
+  Visitors_idVisitors SERIAL NOT NULL,
+  Sessions_idSessions SERIAL NOT NULL,
+  PRIMARY KEY (buids),
+  CONSTRAINT fk_Buids_Visitors
+    FOREIGN KEY (Visitors_idVisitors)
+    REFERENCES Visitors (idVisitors),
+  CONSTRAINT fk_Buids_Sessions
+    FOREIGN KEY (Sessions_idSessions)
+    REFERENCES Sessions (idSessions))
+;
 
 -- -----------------------------------------------------
 -- Table `HUWebshop`.`events`
