@@ -180,6 +180,22 @@ CREATE TABLE IF NOT EXISTS Similars (
     REFERENCES Products (idProducts))
 ;
 
+-- -----------------------------------------------------
+-- Table `HUWebshop`.`Content`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS  Content CASCADE;
+
+CREATE TABLE IF NOT EXISTS Content (
+  Visitors_idVisitors SERIAL NOT NULL,
+  Products_idProducts VARCHAR(255) NOT NULL,
+  CONSTRAINT fk_Similars_Visitors1
+    FOREIGN KEY (Visitors_idVisitors)
+    REFERENCES Visitors (idVisitors),
+  CONSTRAINT fk_Similars_Products1
+    FOREIGN KEY (Products_idProducts)
+    REFERENCES Products (idProducts))
+;
+
 
 -- -----------------------------------------------------
 -- Table `HUWebshop`.`Has_sale`
