@@ -40,6 +40,7 @@ DROP TABLE IF EXISTS  Visitors CASCADE ;
 CREATE TABLE IF NOT EXISTS Visitors (
   idVisitors SERIAL NOT NULL,
   previously_recommended VARCHAR(255) NULL,
+  TypeVisitors VARCHAR(255) NULL,
   latest_visit timestamp NULL,
   PRIMARY KEY (idVisitors))
 ;
@@ -169,6 +170,22 @@ CREATE TABLE IF NOT EXISTS Subcategory (
 DROP TABLE IF EXISTS  Similars CASCADE;
 
 CREATE TABLE IF NOT EXISTS Similars (
+  Visitors_idVisitors SERIAL NOT NULL,
+  Products_idProducts VARCHAR(255) NOT NULL,
+  CONSTRAINT fk_Similars_Visitors1
+    FOREIGN KEY (Visitors_idVisitors)
+    REFERENCES Visitors (idVisitors),
+  CONSTRAINT fk_Similars_Products1
+    FOREIGN KEY (Products_idProducts)
+    REFERENCES Products (idProducts))
+;
+
+-- -----------------------------------------------------
+-- Table `HUWebshop`.`Content`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS  Content CASCADE;
+
+CREATE TABLE IF NOT EXISTS Content (
   Visitors_idVisitors SERIAL NOT NULL,
   Products_idProducts VARCHAR(255) NOT NULL,
   CONSTRAINT fk_Similars_Visitors1
